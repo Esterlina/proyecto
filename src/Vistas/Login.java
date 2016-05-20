@@ -97,11 +97,7 @@ public String getnombre(){
     private javax.swing.JTextField Username;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonRegistrar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 
-    public JButton getBotonRegistrarse() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }
