@@ -51,6 +51,7 @@ public class Login extends javax.swing.JFrame {
         BotonIngresar.setToolTipText("Ingresar");
         BotonIngresar.setBorderPainted(false);
         BotonIngresar.setContentAreaFilled(false);
+        BotonIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(BotonIngresar);
         BotonIngresar.setBounds(520, 480, 150, 60);
 

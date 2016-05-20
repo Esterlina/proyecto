@@ -57,30 +57,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JBPartidaLibre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM2.png"))); // NOI18N
         JBPartidaLibre.setBorderPainted(false);
         JBPartidaLibre.setContentAreaFilled(false);
+        JBPartidaLibre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBPartidaLibre);
         JBPartidaLibre.setBounds(90, 230, 220, 60);
 
         JBTorneo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM3.png"))); // NOI18N
         JBTorneo.setBorderPainted(false);
         JBTorneo.setContentAreaFilled(false);
+        JBTorneo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBTorneo);
         JBTorneo.setBounds(170, 320, 220, 60);
 
         JBVerPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM4.png"))); // NOI18N
         JBVerPerfil.setBorderPainted(false);
         JBVerPerfil.setContentAreaFilled(false);
+        JBVerPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBVerPerfil);
         JBVerPerfil.setBounds(10, 150, 220, 60);
 
         JBConfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM5.png"))); // NOI18N
         JBConfiguraciones.setBorderPainted(false);
         JBConfiguraciones.setContentAreaFilled(false);
+        JBConfiguraciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBConfiguraciones);
         JBConfiguraciones.setBounds(300, 500, 220, 60);
 
         JBCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM6.png"))); // NOI18N
         JBCerrarSesion.setBorderPainted(false);
         JBCerrarSesion.setContentAreaFilled(false);
+        JBCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBCerrarSesion);
         JBCerrarSesion.setBounds(410, 590, 220, 60);
 

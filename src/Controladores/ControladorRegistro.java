@@ -5,6 +5,7 @@
  */
 package Controladores;
 import Vistas.Registro;
+import Modelos.Usuario;
 
 /**
  *
@@ -15,7 +16,8 @@ public class ControladorRegistro {
     
     public ControladorRegistro(){
         this.reg = new Registro();
-        this.reg.setVisible(true);
     }   
-    
+    public Registro getreg(){
+        return this.reg;
+    }
 }

@@ -5,6 +5,8 @@
  */
 package Vistas;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Eric Ramirez Santis
@@ -18,6 +20,7 @@ public class Registro extends javax.swing.JFrame {
         initComponents();
         this.setSize(702, 702);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +72,7 @@ public class Registro extends javax.swing.JFrame {
         Loguearse.setToolTipText("Ir a pantalla de Login");
         Loguearse.setBorderPainted(false);
         Loguearse.setContentAreaFilled(false);
+        Loguearse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(Loguearse);
         Loguearse.setBounds(80, 630, 140, 30);
 
@@ -91,4 +95,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBotonLoguearse() {
+        return Loguearse;
+    }
 }

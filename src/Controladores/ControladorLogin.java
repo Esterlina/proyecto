@@ -18,7 +18,6 @@ public class ControladorLogin {
     
     public ControladorLogin(){
         this.visLog = new Login();
-        this.visLog.setVisible(true);
         this.usuario = new Usuario("lina", "123");
     }
 

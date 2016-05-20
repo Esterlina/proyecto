@@ -25,8 +25,9 @@ public class ControladorPrincipal {
     public static void main(String[] args) {
         // TODO code application logic her
         ControladorPrincipal contPrin = new ControladorPrincipal();
-        
         contPrin.contlog = new ControladorLogin();
+        contPrin.contlog.getVisLog().setVisible(true);
+        contPrin.contreg = new ControladorRegistro();
         contPrin.agregarListenersVistaLogin();
     }
     
@@ -46,17 +47,31 @@ public class ControladorPrincipal {
                 iniciarRegistro();
             }
         });
+        JButton botonVolverLogin = this.contreg.getreg().getBotonLoguearse();
+        botonVolverLogin.addMouseListener(new MouseAdapter(){
+        @Override
+        public void mouseClicked(MouseEvent e){
+            volverLogin();
+        }
+    });
     }
     
     private void iniciarRegistro(){
-        this.contreg = new ControladorRegistro();
+        this.contlog.getVisLog().setVisible(false);
+        this.contreg.getreg().setVisible(true);
     }
     private void iniciarSesion(){
         String mensaje = this.contlog.vereficarDatos();
         if("Datos correctos".equals(mensaje)){
             this.contmenu = new ControladorMenuPrincipal();
+            this.contlog.getVisLog().setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, mensaje);
         }
+    }
+    
+    private void volverLogin(){
+        this.contreg.getreg().setVisible(false);
+        this.contlog.getVisLog().setVisible(true);
     }
 }

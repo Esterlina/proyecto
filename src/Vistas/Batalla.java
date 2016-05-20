@@ -5,6 +5,7 @@
  */
 package Vistas;
 import java.applet.AudioClip;
+import java.awt.Dimension;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Batalla extends javax.swing.JFrame {
      */
     public Batalla() {
         initComponents();
+        this.setMinimumSize(new Dimension(723,703));
     }
 
     /**
@@ -294,6 +296,7 @@ public class Batalla extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DDC USACH");
+        setMinimumSize(new java.awt.Dimension(723, 703));
         setResizable(false);
         getContentPane().setLayout(null);
 
