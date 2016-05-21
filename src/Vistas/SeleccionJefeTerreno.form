@@ -300,7 +300,7 @@
     <Component class="javax.swing.JScrollBar" name="jScrollBar1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="650" y="480" width="-1" height="180"/>
+          <AbsoluteConstraints x="650" y="470" width="-1" height="180"/>
         </Constraint>
       </Constraints>
     </Component>

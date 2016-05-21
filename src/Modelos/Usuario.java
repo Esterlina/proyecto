@@ -1,46 +1,77 @@
-/***********************************************************************
- * Module:  Usuario.java
- * Author:  Esterlina
- * Purpose: Defines the Class Usuario
- ***********************************************************************/
 package Modelos;
-import java.util.*;
 
-/** @pdOid 4448778a-ad7b-457a-9a1b-0de7ec5fb3df */
-public class Usuario extends Jugador {
-    private String username;
-    private String password;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
 
-    public Usuario(String username, String password) {
-        this.username = username;
-        this.password = password;
+public class Usuario extends Jugador{
+    private String Usuario = "";
+    private String Contrasena = "";
+
+    public Usuario() {
     }
 
-    public String getUsername() {
-        return username;
+    public Usuario(String Usuario, String Contrasena) {
+        this.Usuario = Usuario;
+        this.Contrasena = Contrasena;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUsuario() {
+        return Usuario;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getContrasena() {
+        return Contrasena;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
     }
 
-    
-    /**metodos**/
-     public boolean existe(String username){
-        return username.equals(this.username);
-    }
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }    
 
-    public boolean verificarDatos(String username, String password){
-        return username.equals(this.username) && password.equals(this.password);
+    @Override
+    public String toString() {
+        return Usuario + " "+Contrasena;
     }
-    
-
+    public static boolean VerificarDatos(String Login , boolean login) throws FileNotFoundException, IOException{
+        String cadena;
+        FileReader FILE;
+        FileWriter FILEW;
+        BufferedReader br;
+        BufferedWriter bw;
+        FILE = new FileReader("src\\Database\\Usuarios.txt");
+        br = new BufferedReader(FILE);
+        if (login){ 
+            while ((cadena = br.readLine()) != null){
+                if (cadena.equals(Login)){
+                    FILE.close();
+                    return true;
+                }
+            }
+            FILE.close();
+            return false;
+        }else{
+            while((cadena = br.readLine()) != null){
+                String token = cadena.split(" ")[0];
+                if (token.equals(Login.split(" ")[0])){
+                    return false;
+                }
+            }
+            FILE.close();
+            File archivoUsuario = new File("src\\Database\\Usuarios.txt");
+            PrintWriter escritor = new PrintWriter(new FileWriter(archivoUsuario, true));
+            escritor.println(Login);
+            escritor.close();
+            return true;
+        }
+    }
 }

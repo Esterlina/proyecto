@@ -16,6 +16,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**
@@ -38,7 +39,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -46,60 +46,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
         JBEditarPuzzle.setBorderPainted(false);
         JBEditarPuzzle.setContentAreaFilled(false);
         JBEditarPuzzle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        JBEditarPuzzle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarPuzzleActionPerformed(evt);
-            }
-        });
         getContentPane().add(JBEditarPuzzle);
-        JBEditarPuzzle.setBounds(240, 410, 220, 60);
+        JBEditarPuzzle.setBounds(30, 90, 220, 60);
 
         JBPartidaLibre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM2.png"))); // NOI18N
         JBPartidaLibre.setBorderPainted(false);
         JBPartidaLibre.setContentAreaFilled(false);
-        JBPartidaLibre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBPartidaLibre);
-        JBPartidaLibre.setBounds(90, 230, 220, 60);
+        JBPartidaLibre.setBounds(50, 150, 220, 60);
 
         JBTorneo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM3.png"))); // NOI18N
         JBTorneo.setBorderPainted(false);
         JBTorneo.setContentAreaFilled(false);
-        JBTorneo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBTorneo);
-        JBTorneo.setBounds(170, 320, 220, 60);
+        JBTorneo.setBounds(70, 210, 220, 60);
 
         JBVerPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM4.png"))); // NOI18N
         JBVerPerfil.setBorderPainted(false);
         JBVerPerfil.setContentAreaFilled(false);
-        JBVerPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBVerPerfil);
-        JBVerPerfil.setBounds(10, 150, 220, 60);
+        JBVerPerfil.setBounds(90, 270, 220, 60);
 
         JBConfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM5.png"))); // NOI18N
         JBConfiguraciones.setBorderPainted(false);
         JBConfiguraciones.setContentAreaFilled(false);
-        JBConfiguraciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBConfiguraciones);
-        JBConfiguraciones.setBounds(300, 500, 220, 60);
+        JBConfiguraciones.setBounds(110, 330, 220, 60);
 
         JBCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ETC/BMM6.png"))); // NOI18N
         JBCerrarSesion.setBorderPainted(false);
         JBCerrarSesion.setContentAreaFilled(false);
-        JBCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(JBCerrarSesion);
-        JBCerrarSesion.setBounds(410, 590, 220, 60);
+        JBCerrarSesion.setBounds(130, 390, 220, 60);
 
         JLBienvenido.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         JLBienvenido.setForeground(new java.awt.Color(255, 255, 255));
         JLBienvenido.setText("Bienvenido(a)");
         getContentPane().add(JLBienvenido);
-        JLBienvenido.setBounds(20, 50, 150, 50);
+        JLBienvenido.setBounds(10, 10, 150, 50);
 
         JLUsuario.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         JLUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        JLUsuario.setText("Nombre de Usuario");
+        JLUsuario.setText("NombreDeUsuario");
         getContentPane().add(JLUsuario);
-        JLUsuario.setBounds(160, 50, 350, 50);
+        JLUsuario.setBounds(150, 10, 350, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/FondoMM.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -107,11 +97,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JBEditarPuzzleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarPuzzleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBEditarPuzzleActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBCerrarSesion;
     private javax.swing.JButton JBConfiguraciones;

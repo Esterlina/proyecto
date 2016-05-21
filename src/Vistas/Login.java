@@ -1,17 +1,13 @@
 package Vistas;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
-    public Login() {
+    
+    
+    public Login(){
         initComponents();
+        setLocationRelativeTo( null );
     }
 
     /**
@@ -37,12 +33,14 @@ public class Login extends javax.swing.JFrame {
         Username.setFont(new java.awt.Font("Consolas", 0, 24)); // NOI18N
         Username.setToolTipText("Usuario");
         Username.setAlignmentY(4.0F);
+        Username.setNextFocusableComponent(Password);
         getContentPane().add(Username);
         Username.setBounds(460, 380, 200, 40);
 
         Password.setFont(new java.awt.Font("Consolas", 0, 24)); // NOI18N
         Password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Password.setToolTipText("Contraseña");
+        Password.setNextFocusableComponent(BotonIngresar);
         getContentPane().add(Password);
         Password.setBounds(460, 430, 200, 40);
 
@@ -52,6 +50,7 @@ public class Login extends javax.swing.JFrame {
         BotonIngresar.setBorderPainted(false);
         BotonIngresar.setContentAreaFilled(false);
         BotonIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonIngresar.setNextFocusableComponent(BotonRegistrarse);
         getContentPane().add(BotonIngresar);
         BotonIngresar.setBounds(520, 480, 150, 60);
 
@@ -63,6 +62,7 @@ public class Login extends javax.swing.JFrame {
         BotonRegistrarse.setBorderPainted(false);
         BotonRegistrarse.setContentAreaFilled(false);
         BotonRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonRegistrarse.setNextFocusableComponent(Username);
         getContentPane().add(BotonRegistrarse);
         BotonRegistrarse.setBounds(364, 512, 150, 30);
 
@@ -74,22 +74,6 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getBotonIngresar() {
-        return BotonIngresar;
-    }
-public String getnombre(){
-        return this.Username.getText();
-    }
-
-    public String getpassword(){
-        return String.valueOf(this.Password.getPassword());
-    }
-    
-    public JButton getBotonRegistrarse() {
-        return BotonRegistrarse;
-    }
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresar;
     private javax.swing.JButton BotonRegistrarse;
@@ -97,8 +81,24 @@ public String getnombre(){
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField Username;
     // End of variables declaration//GEN-END:variables
-
- 
-
-   
+//Método que hará que otra clase escuche lo que está sucediendo en esta vista
+    public void agregarListener(ActionListener al)
+    {
+        this.BotonIngresar.addActionListener(al);
+        this.BotonRegistrarse.addActionListener(al);
+    }
+    public JButton getBotonIngresar(){
+        return BotonIngresar;
+    }
+    
+    public JButton getBotonRegistarse(){
+        return BotonRegistrarse;
+    }
+    
+    public String getUsername(){
+        return this.Username.getText();
+    }
+    public String getPassword(){
+        return String.valueOf(this.Password.getPassword());
+    }
 }

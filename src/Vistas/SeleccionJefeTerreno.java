@@ -214,7 +214,7 @@ public class SeleccionJefeTerreno extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(380, 560, 260, 100);
         getContentPane().add(jScrollBar1);
-        jScrollBar1.setBounds(650, 480, 17, 180);
+        jScrollBar1.setBounds(650, 470, 17, 180);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/Selección de Jefe de Terreno.png"))); // NOI18N
         jLabel1.setFocusable(false);
