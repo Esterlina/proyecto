@@ -18,15 +18,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class RegistrarseControlador implements ActionListener {
+public class ControladorRegistro implements ActionListener {
 
-    private PrincipalControlador main;
-    private LoginControlador LoginV;
+    private ControladorPrincipal main;
+    private ControladorLogin LoginV;
     private Registrarse RegistrarseV;
     private Usuario UsuarioV;
     
         
-    public RegistrarseControlador(PrincipalControlador main){
+    public ControladorRegistro(ControladorPrincipal main){
         RegistrarseV = new Registrarse();
         RegistrarseV.agregarListener(this);
     }
@@ -36,7 +36,7 @@ public class RegistrarseControlador implements ActionListener {
     }
 
     public void botonLogin() {
-        LoginV = new LoginControlador(main);
+        LoginV = new ControladorLogin(main);
         LoginV.activarLoginV();
         RegistrarseV.setVisible(false);
     }
@@ -76,7 +76,7 @@ public class RegistrarseControlador implements ActionListener {
                 JOptionPane.showMessageDialog(RegistrarseV, "Nombre de Usuario ya registrado");
             }
         } catch (IOException ex) {
-            Logger.getLogger(RegistrarseControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

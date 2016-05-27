@@ -5,6 +5,8 @@
  */
 package Vistas;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Eric Ramirez Santis
@@ -16,7 +18,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
-        setLocationRelativeTo( null );
+         this.setMinimumSize(new Dimension (702, 702));
     }
 
     /**

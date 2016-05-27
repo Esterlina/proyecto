@@ -9,18 +9,19 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
-public class LoginControlador implements ActionListener{
+import Modelos.Musica;
+public class ControladorLogin implements ActionListener{
     
-    private PrincipalControlador main;
+    private ControladorPrincipal main;
     private Login LoginV;
     private Usuario UsuarioV;
     private int IntentosFallidos = 0;
-    private RegistrarseControlador RegV;
+    private ControladorRegistro RegV;
     
-    public LoginControlador(PrincipalControlador main){
+    public ControladorLogin(ControladorPrincipal main){
         LoginV = new Login();
         LoginV.agregarListener(this);
+        
     }
     
     public void activarLoginV(){
@@ -56,13 +57,13 @@ public class LoginControlador implements ActionListener{
                 }
             }
         } catch (IOException ex) {
-            Logger.getLogger(LoginControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         }
 
     public void botonRegistrate() {
-        RegV = new RegistrarseControlador(main);
+        RegV = new ControladorRegistro(main);
         RegV.activarVistaRegistro();
         LoginV.setVisible(false);
     }
