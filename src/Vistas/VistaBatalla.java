@@ -10,12 +10,12 @@ import java.applet.AudioClip;
  *
  * @author Eric Ramirez Santis
  */
-public class Batalla extends javax.swing.JFrame {
+public class VistaBatalla extends javax.swing.JFrame {
 
     /**
      * Creates new form Batalla
      */
-    public Batalla() {
+    public VistaBatalla() {
         initComponents();
     }
 
@@ -68,7 +68,6 @@ public class Batalla extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DDC USACH");
-        setPreferredSize(new java.awt.Dimension(723, 703));
         setResizable(false);
         getContentPane().setLayout(null);
 

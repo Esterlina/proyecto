@@ -1,13 +1,15 @@
 package Vistas;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-public class Login extends javax.swing.JFrame {
+public class VistaLogin extends javax.swing.JFrame {
     
     
-    public Login(){
+    public VistaLogin(){
         initComponents();
-        setLocationRelativeTo( null );
+        this.setMinimumSize(new Dimension (702, 702));
+
     }
 
     /**
@@ -26,7 +28,6 @@ public class Login extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         setResizable(false);
         getContentPane().setLayout(null);
 

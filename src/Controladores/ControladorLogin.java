@@ -1,27 +1,27 @@
 package Controladores;
 
 import Modelos.Usuario;
-import Vistas.Login;
-import Vistas.MenuPrincipal;
+import Vistas.VistaLogin;
+import Vistas.VistaMenuPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import Modelos.Musica;
+
 public class ControladorLogin implements ActionListener{
     
     private ControladorPrincipal main;
-    private Login LoginV;
-    private Usuario UsuarioV;
+    private VistaLogin LoginV;
+    private Usuario UsuarioM;
     private int IntentosFallidos = 0;
-    private ControladorRegistro RegV;
+    private ControladorRegistro RegC;
+    private ControladorMenuPrincipal menuC;
     
     public ControladorLogin(ControladorPrincipal main){
-        LoginV = new Login();
+        LoginV = new VistaLogin();
         LoginV.agregarListener(this);
-        
     }
     
     public void activarLoginV(){
@@ -41,12 +41,12 @@ public class ControladorLogin implements ActionListener{
             else if ( LGContrasena < 1){
                 JOptionPane.showMessageDialog(LoginV, "Contraseña en Blanco");}
             else if ( (booleano = Usuario.VerificarDatos(LoginString,true))){
-                UsuarioV = new Usuario();
-                UsuarioV.setUsuario(Username);
-                UsuarioV.setContrasena(password);
+                UsuarioM = new Usuario();
+                UsuarioM.setUsuario(Username);
+                UsuarioM.setContrasena(password);
                 JOptionPane.showMessageDialog(LoginV, "Login Existoso");
-                MenuPrincipal MenuPrincipal= new MenuPrincipal();
-                MenuPrincipal.setVisible(true);
+                menuC = new ControladorMenuPrincipal(main);
+                menuC.activarVistaMenuPrincipal();
                 LoginV.dispose();
             }
             else{
@@ -63,8 +63,8 @@ public class ControladorLogin implements ActionListener{
         }
 
     public void botonRegistrate() {
-        RegV = new ControladorRegistro(main);
-        RegV.activarVistaRegistro();
+        RegC = new ControladorRegistro(main);
+        RegC.activarVistaRegistro();
         LoginV.setVisible(false);
     }
 

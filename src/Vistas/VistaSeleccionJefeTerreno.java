@@ -5,16 +5,18 @@
  */
 package Vistas;
 
+import Controladores.ControladorSeleccionJefeTerreno;
+
 /**
  *
  * @author Eric Ramirez Santis
  */
-public class SeleccionJefeTerreno extends javax.swing.JFrame {
+public class VistaSeleccionJefeTerreno extends javax.swing.JFrame {
 
     /**
      * Creates new form SeleccionJefeTerreno
      */
-    public SeleccionJefeTerreno() {
+    public VistaSeleccionJefeTerreno() {
         initComponents();
         Grupo1.add(RB1);
         Grupo1.add(RB2);
@@ -55,11 +57,10 @@ public class SeleccionJefeTerreno extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(700, 700));
         setMinimumSize(new java.awt.Dimension(700, 700));
-        setPreferredSize(new java.awt.Dimension(700, 700));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -221,6 +222,10 @@ public class SeleccionJefeTerreno extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 700, 700);
 
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(100, 610, 73, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -274,6 +279,7 @@ public class SeleccionJefeTerreno extends javax.swing.JFrame {
     private javax.swing.JRadioButton RB6;
     private javax.swing.JRadioButton RB7;
     private javax.swing.JRadioButton RB8;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -284,4 +290,8 @@ public class SeleccionJefeTerreno extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     // End of variables declaration//GEN-END:variables
+
+    public void agregarListener(ControladorSeleccionJefeTerreno aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -38,10 +38,10 @@ public class Usuario extends Jugador{
         this.Contrasena = Contrasena;
     }    
 
-    //@Override
-    //public String toString() {
-        //return Usuario + " "+Contrasena;
-    //}
+    @Override
+    public String toString() {
+        return Usuario + " "+Contrasena;
+    }
     public static boolean VerificarDatos(String Login , boolean login) throws FileNotFoundException, IOException{
         String cadena;
         FileReader FILE;

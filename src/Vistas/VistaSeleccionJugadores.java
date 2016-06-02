@@ -1,8 +1,8 @@
 package Vistas;
 
-public class BatallaLibre extends javax.swing.JFrame {
+public class VistaSeleccionJugadores extends javax.swing.JFrame {
 
-    public BatallaLibre() {
+    public VistaSeleccionJugadores() {
         initComponents();
     }
 
@@ -54,7 +54,6 @@ public class BatallaLibre extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         getContentPane().setLayout(null);
 
         separadorVertical.setOrientation(javax.swing.SwingConstants.VERTICAL);

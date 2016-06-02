@@ -14,10 +14,10 @@ import javax.swing.JButton;
  * @author Eric Ramirez Santis
  */
 
-public class Registrarse extends javax.swing.JFrame {
+public class VistaRegistro extends javax.swing.JFrame {
 
 
-    public Registrarse() {
+    public VistaRegistro() {
         initComponents();
         this.setMinimumSize(new Dimension (702, 702));
     }

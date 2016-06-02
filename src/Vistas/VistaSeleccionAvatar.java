@@ -9,12 +9,12 @@ package Vistas;
  *
  * @author Eric Ramirez Santis
  */
-public class SeleccionAvatar extends javax.swing.JFrame {
+public class VistaSeleccionAvatar extends javax.swing.JFrame {
 
     /**
      * Creates new form SeleccionAvatar
      */
-    public SeleccionAvatar() {
+    public VistaSeleccionAvatar() {
         initComponents();
     }
 
@@ -57,7 +57,6 @@ public class SeleccionAvatar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 700));
         setResizable(false);
         getContentPane().setLayout(null);
 

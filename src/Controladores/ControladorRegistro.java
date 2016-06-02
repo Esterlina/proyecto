@@ -10,7 +10,7 @@ package Controladores;
  * @author Eric Ramirez Santis
  */
 import Modelos.Usuario;
-import Vistas.Registrarse;
+import Vistas.VistaRegistro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -21,59 +21,67 @@ import javax.swing.JOptionPane;
 public class ControladorRegistro implements ActionListener {
 
     private ControladorPrincipal main;
-    private ControladorLogin LoginV;
-    private Registrarse RegistrarseV;
-    private Usuario UsuarioV;
+    private ControladorLogin LoginC;
+    private VistaRegistro RegV;
+    private Usuario UsuarioM;
     
         
     public ControladorRegistro(ControladorPrincipal main){
-        RegistrarseV = new Registrarse();
-        RegistrarseV.agregarListener(this);
+        RegV = new VistaRegistro();
+        RegV.agregarListener(this);
     }
     public void activarVistaRegistro(){
-        RegistrarseV.setVisible(true);
+        RegV.setVisible(true);
 
     }
 
     public void botonLogin() {
-        LoginV = new ControladorLogin(main);
-        LoginV.activarLoginV();
-        RegistrarseV.setVisible(false);
+        LoginC = new ControladorLogin(main);
+        LoginC.activarLoginV();
+        RegV.setVisible(false);
     }
 
     public void botonRegistrarse() {
-        String loginString = RegistrarseV.getUsername();
-        String contrasena = RegistrarseV.getPassword1();
+        String loginString = RegV.getUsername();
+        String contrasena = RegV.getPassword1();
         int LGUsuario = loginString.length();
         int LGcontrasena = loginString.length();
         if (LGUsuario < 1){
-            JOptionPane.showMessageDialog(RegistrarseV, "Nombre de Usuario en Blanco");
+            JOptionPane.showMessageDialog(RegV, "Nombre de Usuario en Blanco");
+        }
+        if (LGcontrasena < 1){
+            JOptionPane.showMessageDialog(RegV, "Contraseña en Blanco");
         }
         else if (LGUsuario < 6 || LGUsuario >14){
-            JOptionPane.showMessageDialog(RegistrarseV, "El Nombre de Usuario debe tener entre 6 a 14 caracteres");
+            JOptionPane.showMessageDialog(RegV, "El Nombre de Usuario debe tener entre 6 a 14 caracteres");
         }
-        else if (RegistrarseV.getUsername().contains(" ")){
-            JOptionPane.showMessageDialog(RegistrarseV, "El Nombre de Usuario No puede contener espacios");
+        else if (RegV.getUsername().contains(" ")){
+            JOptionPane.showMessageDialog(RegV, "El Nombre de Usuario No puede contener espacios");
+        }
+        else if (RegV.getUsername().contains(" ")){
+            JOptionPane.showMessageDialog(RegV, "El Nombre de Usuario No puede contener espacios");
+        }
+        else if (!RegV.getUsername().matches("[a-zA-Z0-9]+")){
+            JOptionPane.showMessageDialog(RegV, "Este nombre de usuario contiene caracteres invalidos");   
         }
         else if ( LGcontrasena < 1){
-            JOptionPane.showMessageDialog(RegistrarseV, "Contraseña en Blanco");
+            JOptionPane.showMessageDialog(RegV, "Contraseña en Blanco");
         }
-        else if ( LGcontrasena < 6 || LGcontrasena >14){
-            JOptionPane.showMessageDialog(RegistrarseV, "La contraseña debe tener entre 6 a 14 caracteres");
+        else if (LGcontrasena < 4 || LGcontrasena >15){
+            JOptionPane.showMessageDialog(RegV, "La contraseña debe tener entre 4 a 14 caracteres");
         }
-        else if (RegistrarseV.getUsername().contains(" ")){
-            JOptionPane.showMessageDialog(RegistrarseV, "El Nombre de Usuario No puede contener espacios");
-        }
-        else if (!RegistrarseV.getPassword1().equals(RegistrarseV.getPassword2())){
-            JOptionPane.showMessageDialog(RegistrarseV, "Las contraseñas no coinciden");
+        else if (!RegV.getPassword1().equals(RegV.getPassword2())){
+            JOptionPane.showMessageDialog(RegV, "Las contraseñas no coinciden");
         }
         else try {
             if (Usuario.VerificarDatos(loginString+" "+contrasena,false)==true){
                 System.out.println(loginString);
-                JOptionPane.showMessageDialog(RegistrarseV, "Registro Existoso");
+                JOptionPane.showMessageDialog(RegV, "Registro Exitoso");
+                RegV.dispose();
+                
             }
             else{
-                JOptionPane.showMessageDialog(RegistrarseV, "Nombre de Usuario ya registrado");
+                JOptionPane.showMessageDialog(RegV, "Nombre de Usuario ya registrado");
             }
         } catch (IOException ex) {
             Logger.getLogger(ControladorRegistro.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,10 +90,10 @@ public class ControladorRegistro implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-         if(ae.getSource()==RegistrarseV.getBotonLoguearse()){
+         if(ae.getSource()==RegV.getBotonLoguearse()){
             botonLogin();
         }
-        if(ae.getSource()==RegistrarseV.getBotonRegistrarme()){
+        if(ae.getSource()==RegV.getBotonRegistrarme()){
             botonRegistrarse();
         }
     }
